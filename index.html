@@ -185,7 +185,7 @@
             background-color: var(--purple-light);
             padding: 60px 0;
             text-align: center;
-            border-top: 5px solid var(--cta-accent);
+            border-top: 5px solid black;
             margin: 40px 0;
         }
 
@@ -263,19 +263,6 @@
             margin: 0 auto 20px;
         }
 
-        /* Footer CTA */
-        #footer-cta {
-            background-color: var(--purple-light);
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        #footer-cta h3 {
-            color: var(--purple-dark);
-            font-size: 1.8em;
-            margin-bottom: 15px;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             #hero {
@@ -324,11 +311,11 @@
         <section id="hero">
             <div>
                 <p style="font-size: 1.2em; text-transform: uppercase; font-weight: 500; text-align: center; color: black; margin-top: 0px; padding-top:30px;">New Release from Morgan Cade</p>
-                <h1 style="text-align: center";>READ THE ROOM</h1>
+                <h1 style="text-align: center; padding-top: 40px;">READ THE ROOM</h1>
                 <table style="width:60%; margin:0 auto;">
                     <tr>
                         <td><a href="https://www.amazon.com/Read-Room-Spotting-Danger-Before-ebook/dp/B0F3VT7169/ref=sr_1_1?crid=2EOWFROJIV98H&dib=eyJ2IjoiMSJ9.NQkHRaufUuRqBJ8IDJOkBQ.luD-ZdwmAZ3fqG3CoxZJ2rOAs0QM3f9gM0QrHIQQBdc&dib_tag=se&keywords=read+the+room+morgan+cade&qid=1764213663&sprefix=read+the+room+morgan+cade%2Caps%2C169&sr=8-1"><img src="images/ReadtheRoom.jpg" alt="book cover for read the room" style="width:220px; height:auto; border:1px solid grey;"></a></td>
-                        <td style="padding-left: 30px;"><h2><a href="https://www.amazon.com/Read-Room-Spotting-Danger-Before-ebook/dp/B0F3VT7169/ref=sr_1_1?crid=2EOWFROJIV98H&dib=eyJ2IjoiMSJ9.NQkHRaufUuRqBJ8IDJOkBQ.luD-ZdwmAZ3fqG3CoxZJ2rOAs0QM3f9gM0QrHIQQBdc&dib_tag=se&keywords=read+the+room+morgan+cade&qid=1764213663&sprefix=read+the+room+morgan+cade%2Caps%2C169&sr=8-1" style="color:black; text-decoration:none;">Spotting Danger Before It Finds You: Master Situational Awareness and Take Control of Your Personal Safety and Freedom.</a></h2></td>
+                        <td style="padding-left: 30px;"><h2 style="font-size: 3em;"><a href="https://www.amazon.com/Read-Room-Spotting-Danger-Before-ebook/dp/B0F3VT7169/ref=sr_1_1?crid=2EOWFROJIV98H&dib=eyJ2IjoiMSJ9.NQkHRaufUuRqBJ8IDJOkBQ.luD-ZdwmAZ3fqG3CoxZJ2rOAs0QM3f9gM0QrHIQQBdc&dib_tag=se&keywords=read+the+room+morgan+cade&qid=1764213663&sprefix=read+the+room+morgan+cade%2Caps%2C169&sr=8-1" style="color:black; text-decoration:none;">Spotting Danger Before It Finds You: Master Situational Awareness and Take Control of Your Personal Safety and Freedom.</a></h2></td>
                     </tr>
                 </table>
             </div>
@@ -347,8 +334,8 @@
                         <p>Understand how criminals choose their targets. Learn to change your body language and behavior to become a "hard target."</p>
                     </div>
                     <div class="feature-item">
-                        <h4>The Power of Intuition</h4>
-                        <p>Discover how to trust your gut feeling. This book breaks down the science of intuition so you can act decisively when it matters most.</p>
+                        <h4>Thrive In Any Situation</h4>
+                        <p>Be the person who appears to float through life without drama or hassle.</p>
                     </div>
                 </div>
             </div>
@@ -358,8 +345,8 @@
             <div>
                 <table>
                     <tr>
-                        <td><h2>COMING SOON!</h2></td>td>
-                        <td></td><div class="next-book-promo">
+                        <td><h2>COMING SOON!</h2></td>
+                        <td><div class="next-book-promo">
                     <div class="book2-cover" role="img" aria-label="Placeholder cover for the next book from Purple Goals Press"></div>
                     
                     <div class="next-book-info">
@@ -374,16 +361,21 @@
         <div>
             <h3>Don't Miss Out on *Read the Room* or Our Next Release.</h3>
             <p>Ensure you receive the launch notification, exclusive content, and safety tips directly in your inbox from Purple Goals Press.</p>
-            <div class="cta-form" style="background-color: var(--text-light); border: 2px solid var(--purple-dark); box-shadow: none; max-width: 500px;">
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Best Email Address" required>
-                    </div>
-                    <button type="submit" class="cta-button">
-                        Yes, Keep Me Updated!
-                    </button>
-                </form>
-            </div>
+            <div class="cta-form">
+    <h3>Be the First to Know!</h3>
+    <p style="margin-bottom: 20px;">Get exclusive updates, early access to chapters, and launch alerts for Book 2 *Stay Connected*.</p>
+    <form id="emailForm">
+        <div class="form-group">
+            <input type="email" name="email" id="emailInput" placeholder="Enter your email address" required>
+        </div>
+        <button type="submit" class="cta-button">
+            Sign Up for Updates!
+        </button>
+        <p id="formMessage" style="font-size: 0.9em; margin-top: 15px;"></p>
+        <p style="font-size: 0.8em; color: #666; margin-top: 15px;">We respect your privacy. No spam, just vital news.</p>
+    </form>
+</div>
+        </td>
         </tr>
         </table>
         </div>
@@ -396,7 +388,7 @@
         <section id="about-press">
             <div>
                 <h2>A Message from Purple Goals Press</h2>
-                <p>Morgan Cade's *Read the Room* is a vital, accessible guide that distills decades of security expertise into practical, life-saving skills. At Purple Goals Press, we believe in publishing content that empowers, educates, and inspires positive change. This book delivers exactly that, providing you with the ultimate blueprint for safety and confidence.</p>
+                <p>Morgan Cade's *Read the Room* is a fast-paced, interesting guide that distills decades of security expertise into practical, high-value skills. At Purple Goals Press, we believe in publishing content that empowers, educates, and inspires positive change. This book shares lessons used by the CIA, security teams for celebrities, and moms protecting their children so that everyone can thrive in any situation, safely.</p>
             </div>
         </section>
     </main>
