@@ -103,7 +103,7 @@
             display: flex; /* To center content vertically */
             align-items: center; /* To center content vertically */
             justify-content: center; /* To center content horizontally */
-            background-image: url('images/Farmers_Market.png */
+            background-image: url('images/Farmers_Market.png') */
             background-size: cover;
             background-position: center;
             color: var(--text-light); /* Text color for hero content */
@@ -151,18 +151,21 @@
             padding: 20px; /* Added padding to ensure text isn't right against the edge */
         }
 
-        /* Book 1 Image Placeholder (now positioned separately) */
         .book-cover {
             width: 250px;
             height: 350px;
-            background-color: #5D3FD3; /* Book spine color, matching dark purple */
+            background-image: url('[images/ReadtheRoom.jpg]'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            
             border-radius: 5px;
             box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
             position: relative;
             flex-shrink: 0;
             margin: 0 auto;
             border: 3px solid var(--cta-accent);
-            z-index: 2; /* Ensure book cover is above the hero overlay */
+            z-index: 2; 
         }
 
         .book-cover::before {
