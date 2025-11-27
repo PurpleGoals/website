@@ -97,34 +97,29 @@
 
         /* Hero Section */
         #hero {
-            position: relative; /* For overlay positioning */
-            height: 350px; /* Reduced height by half from original */
-            overflow: hidden; /* Ensure content doesn't overflow */
-            display: flex; /* To center content vertically */
-            align-items: center; /* To center content vertically */
-            justify-content: center; /* To center content horizontally */
-            background-image: url('https://github.com/PurpleGoals/website/blob/main/images/Farmers_Market.png') */
-            background-size: cover;
-            background-position: center;
-            color: var(--text-light); /* Text color for hero content */
-            text-align: center;
-        }
+    background-image: url('images/Farmers_Market.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
 
-        #hero::before { /* Opaque overlay */
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(255, 255, 255, 0.3); /* 30% white opaque overlay */
-            z-index: 1; /* Place overlay above background image */
-        }
+/* Optional: Add overlay for better text readability */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
 
-        #hero .container {
-            position: relative; /* Bring container content above overlay */
-            z-index: 2;
-        }
+#hero .container {
+    position: relative;
+    z-index: 2;
+}
 
         #hero h1 {
             font-size: 3em;
