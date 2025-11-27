@@ -102,7 +102,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative;
+    min-height: 300px;
 }
 
 #hero::before {
@@ -114,6 +114,20 @@
     bottom: 0;
     background: rgba(0, 0, 0, 0.5); /* Dark overlay */
     z-index: 1;
+}
+
+        /* Tablet */
+@media (min-width: 768px) {
+    #hero {
+        min-height: 450px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    #hero {
+        min-height: 600px;
+    }
 }
 
 #hero .container {
@@ -146,38 +160,6 @@
             padding: 20px; /* Added padding to ensure text isn't right against the edge */
         }
 
-        .book-cover {
-            width: 250px;
-            height: 350px;
-            background-image: url('[images/ReadtheRoom.jpg]'); 
-            background-size: cover; 
-            background-position: center;
-            background-repeat: no-repeat;
-            
-            border-radius: 5px;
-            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-            position: relative;
-            flex-shrink: 0;
-            margin: 0 auto;
-            border: 3px solid var(--cta-accent);
-            z-index: 2; 
-        }
-
-        .book-cover::before {
-            content: "Read the Room\n\nMorgan Cade";
-            white-space: pre;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(90deg);
-            color: var(--cta-accent);
-            font-size: 1.5em;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-align: center;
-            width: 300px;
-            line-height: 1.2;
-        }
 
         /* Key Features Section */
         #features {
@@ -358,14 +340,17 @@
             <div class="container">
                 <p style="font-size: 1.2em; text-transform: uppercase; font-weight: 500; text-align: center; color: var(--text-light);">New Release from Morgan Cade</p>
                 <h1>READ THE ROOM</h1>
-                <p class="subtitle">Spotting Danger Before It Finds You: Master Situational Awareness and Take Control of Your Personal Safety.</p>
+                <table>
+                    <tr>
+                        <td><a href="https://www.amazon.com/Read-Room-Spotting-Danger-Before-ebook/dp/B0F3VT7169/ref=sr_1_1?crid=2EOWFROJIV98H&dib=eyJ2IjoiMSJ9.NQkHRaufUuRqBJ8IDJOkBQ.luD-ZdwmAZ3fqG3CoxZJ2rOAs0QM3f9gM0QrHIQQBdc&dib_tag=se&keywords=read+the+room+morgan+cade&qid=1764213663&sprefix=read+the+room+morgan+cade%2Caps%2C169&sr=8-1"><img src="images/ReadtheRoom.jpg" alt="book cover for read the room" style="border 1px solid grey"></a></td>
+                        <td><p class="subtitle"><a href="https://www.amazon.com/Read-Room-Spotting-Danger-Before-ebook/dp/B0F3VT7169/ref=sr_1_1?crid=2EOWFROJIV98H&dib=eyJ2IjoiMSJ9.NQkHRaufUuRqBJ8IDJOkBQ.luD-ZdwmAZ3fqG3CoxZJ2rOAs0QM3f9gM0QrHIQQBdc&dib_tag=se&keywords=read+the+room+morgan+cade&qid=1764213663&sprefix=read+the+room+morgan+cade%2Caps%2C169&sr=8-1">Spotting Danger Before It Finds You: Master Situational Awareness and Take Control of Your Personal Safety.</a></p></td>
+                    </tr>
+                </table>
             </div>
         </section>
 
         <section id="book-and-form-section" style="padding: 40px 0; background-color: var(--purple-light);">
             <div class="container hero-content">
-                
-                <div class="book-cover" role="img" aria-label="Book cover for Read the Room by Morgan Cade"></div>
 
                 <div class="hero-text-and-form">
                     <div class="cta-form">
