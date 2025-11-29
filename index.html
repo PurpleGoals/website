@@ -48,14 +48,14 @@
 
         /* Call-to-Action (CTA) Form Styling */
         .cta-form {
-            background-color: var(--purple-light);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 450px;
-            margin: 20px auto;
-        }
+           overflow: hidden;
+           position: relative;
+       }
+
+         .cta-form iframe {
+             margin-top: -120px;
+             height: 520px;
+       }
 
         .cta-form h3 {
             color: var(--purple-dark);
@@ -359,7 +359,7 @@
                     <td>
                         <section id="footer-cta">
         <div>
-            <div class="cta-form" style="overflow: hidden; position: relative;">
+            <div class="cta-form">
     <h3>Be the First to Know!</h3>
     <p style="margin-bottom: 20px;">Get exclusive updates, early access to chapters, and launch alerts for Book 2 *Stay Connected*.</p>
     
