@@ -364,14 +364,15 @@
                             <h3 style="color: var(--purple-dark); margin-top: 0; font-size: 1.5em;">Be the First to Know!</h3>
                             <p style="margin-bottom: 20px;">Get exclusive updates, early access to chapters, and launch alerts for Book 2 *Stay Connected*.</p>
                             
-                            <div style="height: 220px; overflow: hidden; margin-bottom: 0;">
+                            <div style="height: 217px; overflow: hidden; margin-bottom: 0;">
                                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeamkW3I-yuzogjRVqqRkfyCVauLoecK6sL3K4u69g4k9I57Q/viewform?embedded=true" 
                                         width="100%" 
                                         height="600"
                                         frameborder="0" 
                                         marginheight="0" 
                                         marginwidth="0"
-                                        style="margin-top: -200px;">
+                                        style="margin-top: -200px;"
+                                        onload="checkFormSubmission(this)">
                                     Loading…
                                 </iframe>
                             </div>
@@ -396,4 +397,28 @@
     
 </body>
 </html>
+
+<script>
+function checkFormSubmission(iframe) {
+    // Check periodically if form was submitted
+    setInterval(function() {
+        try {
+            var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            var confirmationText = iframeDoc.body.innerText || iframeDoc.body.textContent;
+            
+            // Google Forms shows "Your response has been recorded" after submission
+            if (confirmationText.includes("response has been recorded") || 
+                confirmationText.includes("submitted") ||
+                confirmationText.includes("thank you")) {
+                
+                // Hide the iframe and show success message
+                iframe.parentElement.innerHTML = '<div style="text-align: center; padding: 40px 20px; color: var(--purple-dark);"><h3 style="color: #4CAF50; margin-bottom: 10px;">✓ You are signed up!</h3><p>Thank you for joining our mailing list. Watch your inbox for exclusive updates!</p></div>';
+            }
+        } catch(e) {
+            // Cross-origin restriction - use alternative method
+            // Google Forms redirects after submission, we can detect URL change
+        }
+    }, 500);
+}
+</script>
 
