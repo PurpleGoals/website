@@ -333,7 +333,7 @@
                 <td style="vertical-align: top; width: 50%;">
                     <h2>COMING SOON!</h2>
                     <div style="display: flex; gap: 30px; align-items: flex-start;">
-                        <div class="book2-cover"><img src="images/MorganCade_Book2_Cover.jpg" alt="book cover for stay connected" style="width:1600px; height:auto; border:1px solid grey;"></div>
+                        <div class="book2-cover"><img src="images/MorganCade_Book2_Cover.jpg" alt="book cover for stay connected" style="width:160px; height:auto; border:1px solid grey;"></div>
                         
                         <div class="next-book-info">
                             <h3>Our Next Highly Anticipated Release</h3>
@@ -382,27 +382,4 @@
 </body>
 </html>
 
-<script>
-function checkFormSubmission(iframe) {
-    // Check periodically if form was submitted
-    setInterval(function() {
-        try {
-            var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-            var confirmationText = iframeDoc.body.innerText || iframeDoc.body.textContent;
-            
-            // Google Forms shows "Your response has been recorded" after submission
-            if (confirmationText.includes("response has been recorded") || 
-                confirmationText.includes("submitted") ||
-                confirmationText.includes("thank you")) {
-                
-                // Hide the iframe and show success message
-                iframe.parentElement.innerHTML = '<div style="text-align: center; padding: 40px 20px; color: var(--purple-dark);"><h3 style="color: #4CAF50; margin-bottom: 10px;">✓ You are signed up!</h3><p>Thank you for joining our mailing list. Watch your inbox for exclusive updates!</p></div>';
-            }
-        } catch(e) {
-            // Cross-origin restriction - use alternative method
-            // Google Forms redirects after submission, we can detect URL change
-        }
-    }, 500);
-}
-</script>
 
