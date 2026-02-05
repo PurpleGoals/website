@@ -37,93 +37,152 @@
     </script>
 
     <style>
-        body { font-family: system-ui, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
-        img { max-width: 100%; height: auto; display: block; margin: 20px 0; }
-        nav { display: flex; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ccc; }
-        h2 { margin-top: 2em; color: #2c3e50; }
-        .book-banner {
-    background: #5C3FD3 0%;
+        /* Core Page Layout */
+body { 
+    font-family: system-ui, -apple-system, sans-serif; 
+    line-height: 1.6; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 0; /* Changed to 0 so sticky banner touches the top */
+}
+
+article {
+    padding: 20px;
+}
+
+h1, h2 { 
+    color: #2c3e50; 
+}
+
+h2 { 
+    margin-top: 2em; 
+}
+
+p {
+    margin-bottom: 1.2em;
+}
+
+/* Sticky Conversion Banner */
+.book-banner {
+    background: #5C3FD3; /* Brand Purple */
     color: #ffffff;
-    padding: 10px 50px;
-    border-bottom: 4px solid #f90;
+    padding: 10px 25px;
+    border-bottom: 4px solid #f90; /* High-contrast accent */
     font-family: 'Segoe UI', Roboto, sans-serif;
     position: sticky;
     top: 0;
     z-index: 9999;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .banner-inner {
     max-width: 1100px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between; /* Spaced Left, Center, and Right */
+    justify-content: space-between;
     align-items: center;
 }
 
-/* LEFT ZONE */
+/* LEFT ZONE: Clickable Book Cover */
 .banner-left {
-    flex: 1; /* Equal width to balance right side */
+    flex: 1;
     display: flex;
     justify-content: flex-start;
 }
 
 .banner-book-img {
-    height: 250px; /* Adjust size to fit banner height */
+    height: 180px; /* High-visibility size */
     width: auto;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
 }
 
-/* CENTER ZONE */
+/* Hover effect: Lift and Brighten */
+.banner-left:hover .banner-book-img {
+    transform: translateY(-5px) scale(1.03);
+    filter: brightness(1.1);
+}
+
+/* CENTER ZONE: Brand Text and Tagline */
 .banner-center {
-    flex: 2; /* Larger middle area */
+    flex: 2;
     text-align: center;
 }
 
+.banner-center a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.banner-center:hover .banner-title {
+    color: #f90; /* Matches tagline on hover */
+}
+
 .banner-title {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 900;
     letter-spacing: 1px;
     display: block;
+    line-height: 1.1;
 }
 
 .banner-tagline {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #f90;
     font-weight: 700;
     text-transform: uppercase;
 }
 
-.banner-promo-p {
-    margin: 5px 0 0 0;
-    font-size: 0.85rem;
-    opacity: 0.9;
-}
-
-/* RIGHT ZONE */
+/* RIGHT ZONE: Amazon Call-to-Action */
 .banner-right {
-    flex: 1; /* Equal width to balance left side */
+    flex: 1;
     display: flex;
     justify-content: flex-end;
 }
 
 .amazon-badge {
-    height: 40px; /* Standard badge height */
+    height: 45px;
     width: auto;
-    transition: transform 0.2s;
+    transition: transform 0.2s ease;
+    cursor: pointer;
 }
 
 .amazon-badge:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
-/* Mobile Adjustments */
+/* Standard Book Elements */
+img { 
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    margin: 20px 0; 
+}
+
+nav { 
+    display: flex; 
+    margin-top: 40px; 
+    padding: 20px; 
+    border-top: 1px solid #ccc; 
+    justify-content: space-between;
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .banner-promo-p, .banner-left {
-        display: none; /* Hide non-essentials on mobile */
+    .banner-left {
+        display: none; /* Hide large book on mobile for better text flow */
     }
     .banner-inner {
-        flex-direction: row;
         justify-content: space-around;
+    }
+    .banner-title {
+        font-size: 1.4rem;
+    }
+    .banner-tagline {
+        font-size: 0.8rem;
     }
 }
     </style>
@@ -132,14 +191,18 @@
   <div class="book-banner">
     <div class="banner-inner">
         <div class="banner-left">
-            <img src="images/StayConnected_eBook_cover.jpg" alt="Stay Connected Book Cover" class="banner-book-img">
+            <a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional-ebook/dp/B0G61XNYKZ/" target="_blank" class="banner-link">
+                <img src="images/StayConnected_eBook_cover.jpg" alt="Stay Connected Book Cover" class="banner-book-img">
+            </a>
         </div>
 
         <div class="banner-center">
-            <div class="banner-text">
-                <span class="banner-title">STAY CONNECTED</span>
-                <span class="banner-tagline">Cell Service Optional</span>
-            </div>
+            <a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional-ebook/dp/B0G61XNYKZ/" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="banner-text">
+                    <span class="banner-title">STAY CONNECTED</span>
+                    <span class="banner-tagline">Cell Service Optional</span>
+                </div>
+            </a>
         </div>
 
         <div class="banner-right">
