@@ -46,6 +46,31 @@
             text-transform: uppercase;
         }
 
+        /* Styling for the new button */
+        .read-btn {
+            background-color: var(--purple-dark);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .read-btn:hover {
+            background-color: #4a32a8;
+        }
+
+        .feature-header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
         /* Call-to-Action (CTA) Form Styling */
         .cta-form {
              overflow: hidden;
@@ -141,7 +166,6 @@
             font-size: 3em;
             color: black;
             margin-top: 0;
-            align: center; 
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Add text shadow for readability */
         }
 
@@ -155,7 +179,7 @@
         #features h2 {
             font-size: 2em;
             color: var(--purple-dark);
-            margin-bottom: 40px;
+            margin-bottom: 0; /* Reset for flex container */
         }
 
         .feature-grid {
@@ -250,14 +274,14 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             #hero {
-                height: 450px; /* Adjust height for smaller screens to fit content better */
-                flex-direction: column; /* Stack content vertically */
+                min-height: 450px; /* Adjust height for smaller screens to fit content better */
             }
             #hero h1 {
                 font-size: 2.2em;
             }
-            #hero .subtitle {
-                font-size: 1.2em;
+            .feature-header-container {
+                flex-direction: column;
+                gap: 10px;
             }
             .feature-item {
                 flex-basis: 100%;
@@ -265,13 +289,6 @@
             }
             .cta-form {
                 max-width: 100%;
-            }
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            .book-cover {
-                margin: 40px auto 0; 
             }
             .next-book-promo {
                 flex-direction: column;
@@ -298,18 +315,20 @@
                 <h1 style="text-align: center; padding-top: 40px;">STAY CONNECTED</h1>
                 <table style="width:60%; margin:0 auto;">
                     <tr>
-                        <td><a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional/dp/B0G64V2BZJ/ref=sr_1_2?crid=2ZT03T2V0NTRI&dib=eyJ2IjoiMSJ9.nj33Of5sA_YCdU4vybcwto2og5cIjdbRKEBO40N8zKIHgzFY9CvJ0kWlLJ3bV9-trIui-WKJr70uXjvh7S3DKN_eNwtdhUJRsN4W9h2J68VxsJdwq4USsMenjxhIw5CwsLrMdPruQY1dVeRcC7VkmdSd-j87TKp95l7985kxrFPVXb_Qk34boskxzH1Q8t9w._CjjzCf-X1gA26E5PSAWay5Lst7UmzHYjLTYJf_ILOc&dib_tag=se&keywords=morgan+cade&qid=1765837883&sprefix=morgan+cade%2Caps%2C189&sr=8-2"><img src="images/StayConnected_eBook_cover.jpg" alt="book cover for stay connected" style="width:220px; height:auto; border:1px solid grey;"></a></td>
-                        <td style="padding-left: 30px;"><h2 style="font-size: 2.2em;"><a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional/dp/B0G64V2BZJ/ref=sr_1_2?crid=2ZT03T2V0NTRI&dib=eyJ2IjoiMSJ9.nj33Of5sA_YCdU4vybcwto2og5cIjdbRKEBO40N8zKIHgzFY9CvJ0kWlLJ3bV9-trIui-WKJr70uXjvh7S3DKN_eNwtdhUJRsN4W9h2J68VxsJdwq4USsMenjxhIw5CwsLrMdPruQY1dVeRcC7VkmdSd-j87TKp95l7985kxrFPVXb_Qk34boskxzH1Q8t9w._CjjzCf-X1gA26E5PSAWay5Lst7UmzHYjLTYJf_ILOc&dib_tag=se&keywords=morgan+cade&qid=1765837883&sprefix=morgan+cade%2Caps%2C189&sr=8-2" style="color:black; text-decoration:none;">You can stay connected to your family and friends even when the cell signal is dead for everyone else.
-</a></h2>
-                    <br/><a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional/dp/B0G64V2BZJ/ref=sr_1_2?crid=2ZT03T2V0NTRI&dib=eyJ2IjoiMSJ9.nj33Of5sA_YCdU4vybcwto2og5cIjdbRKEBO40N8zKIHgzFY9CvJ0kWlLJ3bV9-trIui-WKJr70uXjvh7S3DKN_eNwtdhUJRsN4W9h2J68VxsJdwq4USsMenjxhIw5CwsLrMdPruQY1dVeRcC7VkmdSd-j87TKp95l7985kxrFPVXb_Qk34boskxzH1Q8t9w._CjjzCf-X1gA26E5PSAWay5Lst7UmzHYjLTYJf_ILOc&dib_tag=se&keywords=morgan+cade&qid=1765837883&sprefix=morgan+cade%2Caps%2C189&sr=8-2"><img src="images/amazon.png" style="width:80px"></a></td>
+                        <td><a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional/dp/B0G64V2BZJ/"><img src="images/StayConnected_eBook_cover.jpg" alt="book cover for stay connected" style="width:220px; height:auto; border:1px solid grey;"></a></td>
+                        <td style="padding-left: 30px;"><h2 style="font-size: 2.2em;"><a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional/dp/B0G64V2BZJ/" style="color:black; text-decoration:none;">You can stay connected to your family and friends even when the cell signal is dead for everyone else.</a></h2>
+                    <br/><a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional/dp/B0G64V2BZJ/"><img src="images/amazon.png" style="width:80px"></a></td>
                     </tr>
                 </table>
             </div>
         </section>
 
         <section id="features">
-            <div>
-                <h2>Why You Need to Read This Book</h2>
+            <div class="container">
+                <div class="feature-header-container">
+                    <h2>Why You Need to Read This Book</h2>
+                    <a href="chapter-1-why-staying-connected.html" class="read-btn">Read Chapter 1</a>
+                </div>
                 <div class="feature-grid">
                     <div class="feature-item">
                         <h4>Instant Medical Help</h4>
@@ -373,7 +392,7 @@
 
             
     <section id="about-press">
-      <div>
+      <div class="container">
         <h2 style="color: white;">A Message from Purple Goals Press</h2>
         <p>Morgan Cade's *Read the Room* is a fast-paced, interesting guide that distills decades of security expertise into practical, high-value skills. At Purple Goals Press, we believe in publishing content that empowers, educates, and inspires positive change. This book shares lessons used by the CIA, security teams for celebrities, and moms protecting their children so that everyone can thrive in any situation, safely.</p>
       </div>
@@ -382,5 +401,3 @@
     
 </body>
 </html>
-
-
