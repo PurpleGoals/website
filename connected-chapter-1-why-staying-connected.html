@@ -37,244 +37,180 @@
     </script>
 
     <style>
-        /* Core Page Layout */
-body { 
-    font-family: system-ui, -apple-system, sans-serif; 
-    line-height: 1.6; 
-    max-width: 800px; 
-    margin: 0 auto; 
-    padding: 0; 
-}
+        body { 
+            font-family: system-ui, -apple-system, sans-serif; 
+            line-height: 1.6; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 0; 
+        }
 
-article {
-    padding: 20px;
-}
+        article { padding: 40px 20px; }
+        h1, h2 { color: #2c3e50; }
+        h2 { margin-top: 2em; }
+        p { margin-bottom: 1.2em; }
 
-h1, h2 { 
-    color: #2c3e50; 
-}
+        /* CONVERSION-OPTIMIZED BANNER */
+        .book-banner {
+            background: #5C3FD3; 
+            color: #ffffff;
+            padding: 20px 0;
+            border-bottom: 5px solid #f90; 
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            width: 100%;
+        }
 
-h2 { 
-    margin-top: 2em; 
-}
+        .banner-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            /* MOVES IMAGES 10% CLOSER TO CENTER */
+            padding: 0 10%; 
+        }
 
-p {
-    margin-bottom: 1.2em;
-}
+        .banner-left {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 30px;
+        }
 
-/* Sticky Conversion Banner */
-.book-banner {
-    background: #5C3FD3; /* Brand Purple */
-    color: #ffffff;
-    padding: 10px 25px;
-    border-bottom: 4px solid #f90; /* High-contrast accent */
-    font-family: 'Segoe UI', Roboto, sans-serif;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
+        .banner-book-img {
+            height: 200px; /* FIXED LARGE SIZE */
+            width: auto;
+            border: 1px solid rgba(255,255,255,0.3);
+            /* WHITE GLOW EFFECT */
+            box-shadow: 0 0 25px 5px rgba(255, 255, 255, 0.7), 5px 5px 15px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
 
-.banner-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* Move items 10% closer to center */
-    padding: 0 10%;
-}
+        .banner-book-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px 8px rgba(255, 255, 255, 0.9);
+        }
 
-/* LEFT ZONE: Clickable Book Cover */
-.banner-left {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-}
+        .banner-center {
+            flex: 2;
+            text-align: center;
+            min-width: 300px;
+        }
 
-.banner-book-img {
-    height: 180px; 
-    width: auto;
-    border: 1px solid rgba(255,255,255,0.2);
-    /* Soft white glow pop effect combined with drop shadow */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 5px 5px 15px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
+        .banner-center a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-/* Hover effect: Lift, Brighten, and Intensify Glow */
-.banner-left:hover .banner-book-img {
-    transform: translateY(-5px) scale(1.03);
-    filter: brightness(1.1);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 5px 10px 20px rgba(0,0,0,0.5);
-}
+        .banner-title {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 5px;
+        }
 
-/* CENTER ZONE: Brand Text and Tagline */
-.banner-center {
-    flex: 2;
-    text-align: center;
-}
+        .banner-tagline {
+            font-size: 1.1rem;
+            color: #f90;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
 
-.banner-center a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.3s ease;
-}
+        .banner-right {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 30px;
+        }
 
-.banner-center:hover .banner-title {
-    color: #f90; 
-}
+        .amazon-badge {
+            height: 50px;
+            width: auto;
+            transition: transform 0.2s ease;
+        }
 
-.banner-title {
-    font-size: 1.8rem;
-    font-weight: 900;
-    letter-spacing: 1px;
-    display: block;
-    line-height: 1.1;
-}
+        .amazon-badge:hover {
+            transform: scale(1.1);
+        }
 
-.banner-tagline {
-    font-size: 1rem;
-    color: #f90;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-/* RIGHT ZONE: Amazon Call-to-Action */
-.banner-right {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.amazon-badge {
-    height: 45px;
-    width: auto;
-    transition: transform 0.2s ease;
-    cursor: pointer;
-}
-
-.amazon-badge:hover {
-    transform: scale(1.1);
-}
-
-/* Standard Book Elements */
-img { 
-    max-width: 100%; 
-    height: auto; 
-    display: block; 
-    margin: 20px 0; 
-}
-
-nav { 
-    display: flex; 
-    margin-top: 40px; 
-    padding: 20px; 
-    border-top: 1px solid #ccc; 
-    justify-content: space-between;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .banner-inner {
-        padding: 0; /* Remove 10% squeeze on mobile to fit screen */
-        justify-content: space-around;
-    }
-    .banner-left {
-        display: none; 
-    }
-    .banner-title {
-        font-size: 1.4rem;
-    }
-    .banner-tagline {
-        font-size: 0.8rem;
-    }
-}
+        img { max-width: 100%; height: auto; display: block; margin: 20px 0; }
+        nav { display: flex; margin-top: 40px; padding: 20px; border-top: 1px solid #ccc; justify-content: space-between;}
+        
+        @media (max-width: 850px) {
+            .banner-inner { padding: 0 5%; }
+            .banner-book-img { height: 120px; }
+            .banner-title { font-size: 1.2rem; }
+        }
     </style>
 </head>
 <body>
-  <div class="book-banner">
+<div class="book-banner">
     <div class="banner-inner">
         <div class="banner-left">
-            <a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional-ebook/dp/B0G61XNYKZ/" target="_blank" class="banner-link">
-                <img src="images/StayConnected_eBook_cover.jpg" alt="Stay Connected Book Cover" class="banner-book-img">
+            <a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional-ebook/dp/B0G61XNYKZ/" target="_blank">
+                <img src="images/StayConnected_eBook_cover.jpg" alt="Stay Connected Book" class="banner-book-img">
             </a>
         </div>
-
         <div class="banner-center">
-            <a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional-ebook/dp/B0G61XNYKZ/" target="_blank" style="text-decoration: none; color: inherit;">
-                <div class="banner-text">
-                    <span class="banner-title">STAY CONNECTED</span>
-                    <span class="banner-tagline">Cell Service Optional</span>
-                </div>
+            <a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional-ebook/dp/B0G61XNYKZ/" target="_blank">
+                <span class="banner-title">STAY CONNECTED</span>
+                <span class="banner-tagline">Cell Service Optional</span>
             </a>
         </div>
-
         <div class="banner-right">
-            <div class="banner-cta">
-                <a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional-ebook/dp/B0G61XNYKZ/" target="_blank">
-                    <img src="images/available-amazon-badge.webp" alt="Available on Amazon" class="amazon-badge">
-                </a>
-            </div>
+            <a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional-ebook/dp/B0G61XNYKZ/" target="_blank">
+                <img src="images/available-amazon-badge.webp" alt="Buy on Amazon" class="amazon-badge">
+            </a>
         </div>
     </div>
 </div>
-    <article>
-        <h1>CHAPTER 1: WHY STAYING CONNECTED MATTERS</h1>
-        
-        <p>One crisp February morning in Texas, Alex, a business consultant, woke up expecting a regular workday. Instead, his phone flashed a single, unsettling message: No Service. He tried Wi-Fi. Nothing. No calls, no emails, no updates. The winter storm that swept across the state had severed every line of communication he counted on.</p>
 
-        <p>Alex’s well-ordered day dissolved into uncertainty. He couldn’t reach his parents in Austin or his team in Dallas. As the hours crawled by, he realized how quickly modern life unravels when the simplest connection is gone.</p>
+<article>
+    <h1>CHAPTER 1: WHY STAYING CONNECTED MATTERS</h1>
+    <p>One crisp February morning in Texas, Alex, a business consultant, woke up expecting a regular workday. Instead, his phone flashed a single, unsettling message: No Service. He tried Wi-Fi. Nothing. No calls, no emails, no updates. The winter storm that swept across the state had severed every line of communication he counted on.</p>
 
-        <p>Not every disruption comes from a massive storm. Just last year, Mia, an account manager in Seattle, was working from home when a tree fell on a power line. For six hours, she had no internet, no phone, and no way to notify her clients that she hadn’t disappeared. While not a crisis, it was an inconvenient failure of the technology she relied on and underscored how much smoother life feels when you’ve thought ahead about how to keep communication flowing.</p>
+    <p>Alex’s well-ordered day dissolved into uncertainty. He couldn’t reach his parents in Austin or his team in Dallas. As the hours crawled by, he realized how quickly modern life unravels when the simplest connection is gone.</p>
 
-        <p>Sometimes we think of communication in terms of coordinating meetings or checking in with family, but the reality is that it’s much bigger. It’s a lifeline that carries reassurance, clarity, and the knowledge that you aren’t facing any situation alone. When communication breaks down, regardless of whether it was due to a storm or the government, the aim is to keep daily life moving smoothly.</p>
+    <p>Not every disruption comes from a massive storm. Just last year, Mia, an account manager in Seattle, was working from home when a tree fell on a power line. For six hours, she had no internet, no phone, and no way to notify her clients that she hadn’t disappeared. While not a crisis, it was an inconvenient failure of the technology she relied on and underscored how much smoother life feels when you’ve thought ahead about how to keep communication flowing.</p>
 
-        <h2>Making Sense Of The PACE Plan</h2>
-        <p>You’ll see the term <strong>PACE plan</strong> appear often in these pages. Though it sounds technical, it’s simply an organized way to think about your options:</p>
+    <h2>Making Sense Of The PACE Plan</h2>
+    <p>You’ll see the term <strong>PACE plan</strong> appear often in these pages. Though it sounds technical, it’s simply an organized way to think about your options:</p>
+    <ul>
+        <li><strong>Primary:</strong> Your first choice - usually a text or a call.</li>
+        <li><strong>Alternate:</strong> The next best method if the first fails, like an email.</li>
+        <li><strong>Contingency:</strong> A third route may be a messaging app that uses Wi-Fi.</li>
+        <li><strong>Emergency:</strong> The fallback when everything else collapses, such as meeting at a set location or using a radio.</li>
+    </ul>
 
-        <ul>
-            <li><strong>Primary:</strong> Your first choice - usually a text or a call. </li>
-            <li><strong>Alternate:</strong> The next best method if the first fails, like an email. </li>
-            <li><strong>Contingency:</strong> A third route may be a messaging app that uses Wi-Fi. </li>
-            <li><strong>Emergency:</strong> The fallback when everything else collapses, such as meeting at a set location or using a radio. </li>
-        </ul>
+    
 
-        
-        <figure class="book-image">
-            <img src="images/img_0.png" alt="A PACE plan uses four layers of communication" loading="lazy">
-            <figcaption>Figure 1: A PACE plan uses four layers of communication, from everyday calls to backup radios.</figcaption>
-        </figure>
+    <figure>
+        <img src="images/img_0.png" alt="A PACE plan uses four layers of communication" loading="lazy">
+        <figcaption>Figure 1: A PACE plan uses four layers of communication, from everyday calls to backup radios.</figcaption>
+    </figure>
 
-        <p>Sarah lives on the Florida coast and is accustomed to hurricanes and tropical storms knocking out power. As Hurricane Ian barreled toward her town, she and her family didn’t scramble to figure out what to do. Their PACE plan was ready. When mobile signals dropped, they moved calmly from texts to Wi-Fi messaging using their mesh network. When power failed, they gathered at the community center they’d agreed upon weeks earlier. Having a plan made dealing with the storm much easier.</p>
+    <p>Sarah lives on the Florida coast and is accustomed to hurricanes and tropical storms knocking out power. As Hurricane Ian barreled toward her town, she and her family didn’t scramble to figure out what to do. Their PACE plan was ready. When mobile signals dropped, they moved calmly from texts to Wi-Fi messaging using their mesh network. When power failed, they gathered at the community center they’d agreed upon weeks earlier. Having a plan made dealing with the storm much easier.</p>
 
-        <h2>How To Use This Book</h2>
-        <p>This guide was designed to be approachable, practical, and - most importantly - useful. Each chapter offers examples, stories, and instructions you can adapt to your own life, whether you’re keeping your business running, staying on top of work deadlines, or making sure your family can reach you when they need you.</p>
+    <h2>A Story Worth Sharing</h2>
+    <p>A few years ago, a standoff between Apple and the FBI highlighted the delicate balance between privacy and access. Investigators asked Apple to build special software that would let them unlock a suspect’s iPhone. Apple refused, explaining that creating this tool would effectively produce a master key that could be stolen, copied, or abused.</p>
 
-        <p>The book is divided into four parts, each with a different focus. <strong>Part One</strong> explores how communication systems evolved and why understanding these systems helps you keep daily life steady. <strong>Part Two</strong> focuses on staying in touch with the people closest to you. <strong>Part Three</strong> explores the technologies shaping the future of connection, with an in-depth focus on mesh networking. <strong>Part Four</strong> shares real-world examples of how thoughtful planning and modern tools have made communities safer.</p>
+    <p>Fast forward to 2025 and iPhone users are concerned about the Metadata tracking system that tracks every image a user views or clicks on. Metadata tracking stirs controversy because it collects context about your activity not just the content itself. When you take a photo, that image may include the where, when, how, and even who behind it, all automatically logged in the background.</p>
 
-        <h2>A Story Worth Sharing</h2>
-        <p>A few years ago, a standoff between Apple and the FBI highlighted the delicate balance between privacy and access. Investigators asked Apple to build special software that would let them unlock a suspect’s iPhone. Apple refused, explaining that creating this tool would effectively produce a master key that could be stolen, copied, or abused.</p>
+    
 
-        <p>Some people argued the company was standing in the way of justice. Others believed Apple was defending every user’s right to secure data. The case sparked debates worldwide about how far companies should go to help authorities and how much privacy individuals should sacrifice in the name of safety.</p>
+    <p>Apple has tried to minimize risk by storing metadata locally, allowing users to toggle off location services for the camera, and adding a “Remove Location” option when sharing photos. But the issue remains thorny because metadata is baked into almost every modern image. This dilemma isn’t theoretical—it touches every message, file, and photo you share.</p>
 
-        <p>Fast forward to 2025 and iPhone users are concerned about the Metadata tracking system that tracks every image a user views or clicks on. Metadata tracking stirs controversy because it collects context about your activity not just the content itself. When you take a photo, that image may include the where, when, how, and even who behind it, all automatically logged in the background. Most people don’t realize how revealing that data can be.</p>
+</article>
 
-        <figure class="book-image">
-            <img src="images/img_1.png" alt="Privacy alert illustration" loading="lazy">
-            <figcaption>Figure 2: “I know where you are” - The risks of shared metadata.</figcaption>
-        </figure>
-
-        <p>For example, the GPS tag inside a photo can pinpoint your exact location within a few feet, down to the time of day. When shared online or via messaging apps that don’t strip metadata, it can expose your home address, your kids’ school, or your travel habits. Journalists and security researchers have highlighted how this information has been used in court cases, leaked in celebrity photo scandals, and exploited for stalking or doxxing.</p>
-
-        <p>Apple has tried to minimize risk by storing metadata locally, allowing users to toggle off location services for the camera, and adding a “Remove Location” option when sharing photos. But the issue remains thorny because metadata is baked into almost every modern image. This dilemma isn’t theoretical—it touches every message, file, and photo you share. That’s why you’ll find this book weaving together stories of technological progress, legal
-challenges, and practical steps you can take to stay privately connected on your terms.
-When you’re ready, continue to the next chapter...</p>
-
-    </article>
-    <nav class="chapter-nav">
-        <a href="part-one.html">← Previous</a>
-        <a href="chapter-2-how-we-learned-to-talk.html" style="margin-left:auto">Next →</a>
-    </nav>
+<nav>
+    <a href="part-one.html">← Previous</a>
+    <a href="chapter-2-how-we-learned-to-talk.html" style="margin-left:auto">Next →</a>
+</nav>
 </body>
 </html>
