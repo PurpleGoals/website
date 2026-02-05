@@ -43,7 +43,7 @@ body {
     line-height: 1.6; 
     max-width: 800px; 
     margin: 0 auto; 
-    padding: 0; /* Changed to 0 so sticky banner touches the top */
+    padding: 0; 
 }
 
 article {
@@ -81,6 +81,8 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* Move items 10% closer to center */
+    padding: 0 10%;
 }
 
 /* LEFT ZONE: Clickable Book Cover */
@@ -91,18 +93,20 @@ p {
 }
 
 .banner-book-img {
-    height: 180px; /* High-visibility size */
+    height: 180px; 
     width: auto;
     border: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease, filter 0.3s ease;
+    /* Soft white glow pop effect combined with drop shadow */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 5px 5px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
-/* Hover effect: Lift and Brighten */
+/* Hover effect: Lift, Brighten, and Intensify Glow */
 .banner-left:hover .banner-book-img {
     transform: translateY(-5px) scale(1.03);
     filter: brightness(1.1);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 5px 10px 20px rgba(0,0,0,0.5);
 }
 
 /* CENTER ZONE: Brand Text and Tagline */
@@ -118,7 +122,7 @@ p {
 }
 
 .banner-center:hover .banner-title {
-    color: #f90; /* Matches tagline on hover */
+    color: #f90; 
 }
 
 .banner-title {
@@ -172,11 +176,12 @@ nav {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .banner-left {
-        display: none; /* Hide large book on mobile for better text flow */
-    }
     .banner-inner {
+        padding: 0; /* Remove 10% squeeze on mobile to fit screen */
         justify-content: space-around;
+    }
+    .banner-left {
+        display: none; 
     }
     .banner-title {
         font-size: 1.4rem;
@@ -229,10 +234,10 @@ nav {
         <p>You’ll see the term <strong>PACE plan</strong> appear often in these pages. Though it sounds technical, it’s simply an organized way to think about your options:</p>
 
         <ul>
-            <li><strong>Primary:</strong> Your first choice - usually a text or a call.</li>
-            <li><strong>Alternate:</strong> The next best method if the first fails, like an email.</li>
-            <li><strong>Contingency:</strong> A third route may be a messaging app that uses Wi-Fi.</li>
-            <li><strong>Emergency:</strong> The fallback when everything else collapses, such as meeting at a set location or using a radio.</li>
+            <li><strong>Primary:</strong> Your first choice - usually a text or a call. </li>
+            <li><strong>Alternate:</strong> The next best method if the first fails, like an email. </li>
+            <li><strong>Contingency:</strong> A third route may be a messaging app that uses Wi-Fi. </li>
+            <li><strong>Emergency:</strong> The fallback when everything else collapses, such as meeting at a set location or using a radio. </li>
         </ul>
 
         
