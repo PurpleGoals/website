@@ -58,6 +58,33 @@
         h2 { margin-top: 2em; }
         p { margin-bottom: 1.2em; }
 
+        table {
+        width: 100%;
+        border-collapse: collapse; /* Essential for the single-line border look */
+        margin: 25px 0;
+        font-family: var(--font-main);
+    }
+
+    th, td {
+        border: 1px solid #e0e0e0; /* Subtle light grey border */
+        padding: 16px 20px;       /* Increased padding to make columns longer/spacious */
+        text-align: left;         /* Explicit left alignment */
+        vertical-align: top;
+    }
+
+    th {
+        background-color: #f8f9fa;
+        color: var(--purple-dark);
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+    }
+
+    tr:hover {
+        background-color: #fcfcfc; /* Subtle hover effect for better tracking */
+    }
+
         /* CONVERSION-OPTIMIZED BANNER */
         .book-banner {
             background: #5C3FD3; 
@@ -200,19 +227,31 @@
         <div class="aeo-summary">
             <h3>Digital Tool Best Practices</h3>
             <table>
-                <thead>
-                    <tr>
-                        <th>Platform</th>
-                        <th>Core Strategy</th>
-                        <th>Goal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>Email</strong></td><td>Five-Sentence Rule</td><td>Clarity & Respect for Time</td></tr>
-                    <tr><td><strong>Social Media</strong></td><td>Ten-Minute Rule</td><td>Reclaiming Attention</td></tr>
-                    <tr><td><strong>Messaging</strong></td><td>Batching Replies</td><td>Deep Focus & Calm</td></tr>
-                </tbody>
-            </table>
+    <thead>
+        <tr>
+            <th>Platform</th>
+            <th>Core Strategy</th>
+            <th>Goal</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Email</strong></td>
+            <td>Five-Sentence Rule</td>
+            <td>Clarity & Respect for Time</td>
+        </tr>
+        <tr>
+            <td><strong>Social Media</strong></td>
+            <td>Ten-Minute Rule</td>
+            <td>Reclaiming Attention</td>
+        </tr>
+        <tr>
+            <td><strong>Messaging</strong></td>
+            <td>Batching Replies</td>
+            <td>Deep Focus & Calm</td>
+        </tr>
+    </tbody>
+</table>
         </div>
 
         <h2>Social Media: Our Digital Gathering Place</h2>
@@ -241,7 +280,7 @@
     </article>
     <nav class="chapter-nav">
         <a href="https://purplegoals.com/connected-chapter-2-how-we-learned-to-talk.html">← Previous</a>
-        <a href="chapter-4-how-phones-became-our.html" style="margin-left:auto">Next →</a>
+        <a href="https://purplegoals.com/connected-chapter-4-how-phones-became-our.html" style="margin-left:auto">Next →</a>
     </nav>
 </body>
 </html>
