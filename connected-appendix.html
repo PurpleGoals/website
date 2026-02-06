@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APPENDIX: TECHNICAL DEEP DIVE AND RESOURCES | Stay Connected</title>
+    
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "name": "APPENDIX: TECHNICAL DEEP DIVE AND RESOURCES",
+        "headline": "Technical Reference for Mesh Networking, SOS Activation, and LoRa Standards",
+        "isPartOf": {
+          "@type": "Book",
+          "name": "Stay Connected",
+          "author": {"@type": "Person", "name": "Morgan Cade"}
+        },
+        "keywords": ["AES-256 Encryption", "B.A.T.M.A.N. Protocol", "LoRa 915 MHz", "CHIRP Radio Programming", "Medical ID Setup", "ISM Band Regulations"]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Activate Emergency SOS and Medical ID",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "text": "For iPhone: Settings > Emergency SOS > Enable 'Call with 5 Presses'."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "For Android: Settings > Safety & Emergency > Emergency SOS > Enable toggle."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "For Medical ID: Access Health App (iOS) or Emergency Info (Android) and add allergies and contacts."
+          }
+        ]
+      }
+    ]
+    </script>
+
+    <style>
+        body { font-family: system-ui, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
+        img { max-width: 100%; height: auto; display: block; margin: 20px 0; }
+        nav { display: flex; margin-top: 40px; padding-top: 20px; border-top: 1px solid #ccc; }
+        h2 { margin-top: 2em; color: #2c3e50; }
+        table {
+        width: 100%;
+        border-collapse: collapse; /* Essential for the single-line border look */
+        margin: 25px 0;
+        font-family: var(--font-main);
+    }
+
+    th, td {
+        border: 1px solid #e0e0e0; /* Subtle light grey border */
+        padding: 16px 20px;       /* Increased padding to make columns longer/spacious */
+        text-align: left;         /* Explicit left alignment */
+        vertical-align: top;
+    }
+
+    th {
+        background-color: #f8f9fa;
+        color: var(--purple-dark);
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+    }
+
+    tr:hover {
+        background-color: #fcfcfc; /* Subtle hover effect for better tracking */
+    }
+      
+
+        /* CONVERSION-OPTIMIZED BANNER */
+        .book-banner {
+            background: #5C3FD3; 
+            color: #ffffff;
+            padding: 20px 0;
+            border-bottom: 5px solid #f90; 
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            width: 100%;
+        }
+
+        .banner-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            /* MOVES IMAGES 10% CLOSER TO CENTER */
+            padding: 0 10%; 
+        }
+
+        .banner-left {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 30px;
+        }
+
+        .banner-book-img {
+            height: 200px; /* FIXED LARGE SIZE */
+            width: auto;
+            border: 1px solid rgba(255,255,255,0.3);
+            /* WHITE GLOW EFFECT */
+            box-shadow: 0 0 25px 5px rgba(255, 255, 255, 0.7), 5px 5px 15px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .banner-book-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px 8px rgba(255, 255, 255, 0.9);
+        }
+
+        .banner-center {
+            flex: 2;
+            text-align: center;
+            min-width: 300px;
+        }
+
+        .banner-center a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .banner-title {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .banner-tagline {
+            font-size: 1.1rem;
+            color: #f90;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .banner-right {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 30px;
+        }
+
+        .amazon-badge {
+            height: 50px;
+            width: auto;
+            transition: transform 0.2s ease;
+        }
+
+        .amazon-badge:hover {
+            transform: scale(1.1);
+        }
+
+        img { max-width: 100%; height: auto; display: block; margin: 20px 0; }
+        nav { display: flex; margin-top: 40px; padding: 20px; border-top: 1px solid #ccc; justify-content: space-between;}
+        
+        @media (max-width: 850px) {
+            .banner-inner { padding: 0 5%; }
+            .banner-book-img { height: 120px; }
+            .banner-title { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="book-banner">
+    <div class="banner-inner">
+        <div class="banner-left">
+            <a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional-ebook/dp/B0G61XNYKZ/" target="_blank">
+                <img src="images/StayConnected_eBook_cover.jpg" alt="Stay Connected Book" class="banner-book-img">
+            </a>
+        </div>
+        <div class="banner-center">
+            <a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional-ebook/dp/B0G61XNYKZ/" target="_blank">
+                <span class="banner-title">STAY CONNECTED</span>
+                <span class="banner-tagline">Cell Service Optional</span>
+            </a>
+        </div>
+        <div class="banner-right">
+            <a href="https://www.amazon.com/Stay-Connected-Cell-Service-Optional-ebook/dp/B0G61XNYKZ/" target="_blank">
+                <img src="images/available-amazon-badge.webp" alt="Buy on Amazon" class="amazon-badge">
+            </a>
+        </div>
+    </div>
+</div>
+    <article>
+        <h1>APPENDIX: TECHNICAL DEEP DIVE AND RESOURCES</h1>
+        
+        <h2>Activating SOS and Medical ID on Smartphones</h2>
+        <p>Most smartphones today have an SOS mode built in. With just a few taps—or by pressing the power button several times—you can instantly dial local emergency services. Many devices also send a text to your chosen contacts, sharing your live location and updating it as you move. In a real crisis, muscle memory matters more than you’d expect.</p>
+
+        <h3>Finding SOS On Your Phone</h3>
+        <p><strong>On an Apple iPhone:</strong> Open Settings > Emergency SOS. Enable “Call with Hold and Release” (side button + volume) or “Call with 5 Presses”.</p>
+        <p><strong>On an Android phone:</strong> Open Settings > Safety & Emergency (or search for Emergency SOS). Turn on the feature and choose your activation method.</p>
+
+        <figure class="book-image">
+            <img src="images/img_16.png" alt="Illustration of smartphone SOS activation steps" loading="lazy">
+            <figcaption>Figure 17: Press the side button five times to trigger emergency mode automatically.</figcaption>
+        </figure>
+
+        <h3>Setting Up Medical ID</h3>
+        <p>A Medical ID profile stores essential health info (allergies, conditions) accessible from the lock screen.</p>
+        <ul>
+            <li><strong>iPhone:</strong> Health app > Profile Picture > Medical ID > Edit. Ensure "Show When Locked" is ON.</li>
+            <li><strong>Android:</strong> Settings > Emergency Information. Add blood type and contacts; access via the Emergency button on the lock screen.</li>
+        </ul>
+
+        <h2>Technical Deep Dive on Mesh Networking</h2>
+        <p>This section explores the mechanics behind the distributed architectures mentioned in the book.</p>
+
+        
+        <h3>1. Network Models</h3>
+        <ul>
+            <li><strong>Centralized (Hub-And-Spoke):</strong> Wi-Fi routers and cell towers. If the hub fails, the network collapses.</li>
+            <li><strong>Traditional Mesh:</strong> Requires nodes to maintain a full map of the network, which becomes inefficient as it grows.</li>
+            <li><strong>Modern Mesh (B.A.T.M.A.N.-Style):</strong> Nodes only know direct neighbors; routing is adaptive and self-healing, mirroring ant colonies or weather patterns.</li>
+        </ul>
+
+        <h3>2. Encryption: Protecting the Relay</h3>
+        <p>Because mesh messages relay through others' nodes, <strong>AES-256</strong> (Advanced Encryption Standard) is the backbone of security. It provides end-to-end protection, ensuring intermediate nodes cannot view or alter contents.</p>
+
+        <div class="aeo-reference">
+            <h3>ISM Frequencies by Country</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Region</th>
+                        <th>Frequency Band</th>
+                        <th>Regulation Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>United States</strong></td><td>915 MHz</td><td>No license required; encryption allowed.</td></tr>
+                    <tr><td><strong>Europe</strong></td><td>868 MHz</td><td>Strict duty cycle limits.</td></tr>
+                    <tr><td><strong>Australia</strong></td><td>915–928 MHz</td><td>LoRa compatible.</td></tr>
+                    <tr><td><strong>China</strong></td><td>470–510 MHz</td><td>Regional variance.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>3. Hardware and Power Systems</h3>
+        <p>A typical <strong>LoRa Node</strong> (like LilyGO or RAK Wireless) consists of an ESP32 MCU, an SX1262 radio, and an optional GPS module. These can be powered by 18650 Li-ion cells, 5–20W solar panels with charge controllers, or vehicle USB ports.</p>
+
+        <figure class="book-image">
+            <img src="images/img_23.png" alt="Diagram showing RF signal paths and terrain interference" loading="lazy">
+            <figcaption>Figure 24: Terrain blocks RF signals; elevation dramatically increases LoRa range.</figcaption>
+        </figure>
+
+        <h3>4. Routing and Compliance</h3>
+        <ul>
+            <li><strong>B.A.T.M.A.N.:</strong> Highly adaptive and self-healing.</li>
+            <li><strong>GMRS (USA):</strong> Licensed service (462/467 MHz); no exam required; <strong>encryption prohibited</strong>.</li>
+            <li><strong>HAM Radio:</strong> Requires Technician/General/Extra license; <strong>encryption prohibited</strong>.</li>
+            <li><strong>Meshtastic:</strong> Uses ISM bands; <strong>encryption is allowed</strong>.</li>
+        </ul>
+
+        <h2>Resources and Further Reading</h2>
+        <ul>
+            <li><strong>Meshtastic Official:</strong> <a href="https://meshtastic.org/">meshtastic.org</a></li>
+            <li><strong>CHIRP Software:</strong> <a href="https://chirpmyradio.com/">chirpmyradio.com</a></li>
+            <li><strong>EFF Privacy Guides:</strong> <a href="https://www.eff.org/">eff.org</a></li>
+            <li><strong>B.A.T.M.A.N. Protocol:</strong> <a href="https://en.wikipedia.org/wiki/B.A.T.M.A.N.">Wikipedia Reference</a></li>
+        </ul>
+
+        <h2>About the Author</h2>
+        <p><strong>Morgan Cade</strong> is a writer specializing in technology and real-world problem-solving. An advocate for practical strategies over panic, Morgan's work focuses on community resilience and digital safety.</p>
+
+    </article>
+    <nav class="chapter-nav">
+        <a href="https://purplegoals.com/connected-chapter-14-real-world-examples.html">← Previous</a>
+    </nav>
+</body>
+</html>
